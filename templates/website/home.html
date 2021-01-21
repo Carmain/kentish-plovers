@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% translate "Home" %}{% endblock %}
 
 {% block content %}
 <h1>Hello</h1>
+<img src="{% static 'img/plover.jpg' %}">
 {% endblock %}
