@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Search" %}{% endblock %}
+
+{% block content %}
+<section class="container py-lg-3">
+    <h2>{% trans "Search a plover" %}</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link {% if form_url == '/search/metal' %} active{% endif %}" href="{% url 'search' method='metal' %}">
+                {% trans "Search by metal ring code" %}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if form_url == '/search/code' %} active{% endif %}" href="{% url 'search' method='code' %}">
+                {% trans "Search by color code" %}
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content my-3">
+        <form method="post" action="{{form_url}}" autocomplete="off">
+            {% csrf_token %}
+
+            <div class="row">
+                {% for field in form %}
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        {{ field }}
+                        <label for="{{ field.name }}" class="control-label">{{ field.label }}</label>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
+            </div>
+        </form>
+    </div>
+
+    {% if plover %}
+    <hr />
+
+    <div class="row flex-sm-row-reverse mb-3">
+        <div class="col-md-4">
+            <div class="thumbnail d-flex justify-content-center align-items-center flex-column">
+                <img class="d-block resume-logo" src="{% static 'img/square_gonm.png' %}" alt="{% trans 'GONm logo' %}">
+            </div>
+        </div>
+        <div class="col-md-8 d-flex justify-content-center align-items-center flex-column">
+            <h3 class="text-center">{% trans "History of observations about a banded kentish plover" %}<b></b></h3>
+            <h4 class="text-center"><i>{% trans "Charadrius alexandrinus" %}</i></h4>
+        </div>
+    </div>
+
+    {% include "common/bird_resume.html" with header_split=True %}
+    {% endif %}
+
+    {% if not_found %}
+    <div class="alert alert-warning" role="alert">
+        {% trans "Can't find any plover related to the given informations" %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
