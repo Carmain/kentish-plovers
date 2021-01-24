@@ -1,0 +1,108 @@
+# Locations
+
+- model: website.location
+  pk: 1
+  fields:
+    country: France
+    town: MERVILLE-FRANCEVILLE-PLAGE
+    department: Calvados
+    locality: Plage
+
+- model: website.location
+  pk: 2
+  fields:
+    country: France
+    town: AGON-COUTAINVILLE
+    department: Manche
+    locality: Pointe d'Agon
+
+- model: website.location
+  pk: 3
+  fields:
+    country: France
+    town: COSQUEVILLE
+    department: Manche
+    locality: Le Hable
+
+# Observers
+
+- model: website.observer
+  pk: 1
+  fields:
+    last_name: RAMBO
+    first_name: John
+    is_bander: true
+    email: j.rambo@example.com
+
+- model: website.observer
+  pk: 2
+  fields:
+    last_name: BELON
+    first_name: Pierre
+    is_bander: true
+    email: p.belon@example.com
+
+# Plovers
+
+- model: website.plover
+  fields:
+    bander: 1
+    location: 1
+    banding_year: 2016
+    metal_ring: SE22622
+    code: 112
+    color: R
+    sex: M
+    age: "+1A"
+    banding_date: "2012-01-01"
+    banding_time: "16:00:00.000000"
+
+- model: website.plover
+  fields:
+    bander: 1
+    location: 2
+    banding_year: 2014
+    metal_ring: SE22412
+    code: 59
+    color: W
+    sex: F
+    age: PUL
+    banding_date: "2012-08-10"
+    banding_time: "12:45:00.000000"
+
+- model: website.plover
+  fields:
+    bander: 2
+    location: 3
+    banding_year: 2015
+    metal_ring: SE22527
+    code: 142
+    color: Y
+    sex: U
+    age: "+1A"
+    banding_date: "2016-05-21"
+    banding_time: "10:52:00.000000"
+
+# Observations
+
+- model: website.observation
+  pk: 1
+  fields:
+    observer: 1
+    plover: 1
+    location: 1
+    date: "2012-01-01"
+    supposed_sex: "M"
+    coordinate_x: 40.1234
+    coordinate_y: 12
+
+- model: website.observation
+  pk: 2
+  fields:
+    observer: 2
+    plover: 1
+    location: 2
+    date: "2012-01-04"
+    supposed_sex: "F"
+    coordinate_x: 40.1234
+    coordinate_y: 12
