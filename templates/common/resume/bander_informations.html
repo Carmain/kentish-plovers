@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<tr>
+    <td><b>{% trans 'Bander' %}</b></td>
+    <td>{{ plover.bander.full_name }}</td>
+</tr>
+<tr>
+    <td><b>{% trans 'Banding location' %}</b></td>
+    <td>{{ plover.banding_date }}</td>
+</tr>
+<tr>
+    <td><b>{% trans 'Banding date' %}</b></td>
+    <td>{{ plover.location.minimal_location }}</td>
+</tr>
