@@ -6,9 +6,9 @@
 </tr>
 <tr>
     <td><b>{% trans 'Banding location' %}</b></td>
-    <td>{{ plover.banding_date }}</td>
+    <td>{{ plover.location.minimal_location }}</td>
 </tr>
 <tr>
     <td><b>{% trans 'Banding date' %}</b></td>
-    <td>{{ plover.location.minimal_location }}</td>
+    <td>{{ plover.banding_date|stringformat:'s' }}</td>
 </tr>

@@ -130,3 +130,6 @@ dmypy.json
 
 # Misc
 .vscode/
+
+# JS packages
+static/node_modules/
