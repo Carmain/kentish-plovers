@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load static %}
+
+<table class="header">
+    <thead>
+        <th>
+            <td>
+                <img class="resume-logo" src="{% static 'img/square_gonm.png' %}" alt="{% trans 'GONm logo' %}">
+            </td>
+        <th>
+        </th>
+            <td align="center">
+                <h3 class="text-center">{% trans "History of observations about a banded kentish plover" %}<b></b></h3>
+                <h4 class="text-center"><i>{% trans "Charadrius alexandrinus" %}</i></h4>
+            </td>
+        </th>
+    </thead>
+</table>
+
+{% include "common/bird_resume.html" with header_split=False %}
