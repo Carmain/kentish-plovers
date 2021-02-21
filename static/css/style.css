@@ -4,3 +4,13 @@
     max-height: 200px;
     height: 100%;
 }
+
+#map {
+    height: 180px;
+    margin-bottom: 30px;
+}
+
+hr {
+    margin: 30px;
+    padding: 0;
+}

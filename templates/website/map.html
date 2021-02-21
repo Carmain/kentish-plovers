@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Set your observations" %}{% endblock %}
+{% block content %}
+
+<section class="container py-lg-3">
+    <h2>{% trans "Set a location and a date" %}</h2>
+
+    <div id="map" class="map-form"></div>
+
+    <form method="post" action="{% url 'map' %}" autocomplete="off">
+        {% csrf_token %}
+        <div class="row mb-3">
+            {% include "common/field.html" with field=form.date %}
+        </div>
+        <div class="row mb-3">
+            {% include "common/field.html" with field=form.last_name %}
+            {% include "common/field.html" with field=form.first_name %}
+        </div>
+        <div class="row mb-3">
+            {% include "common/field.html" with field=form.email %}
+        </div>
+
+        <hr />
+
+        <div class="row mb-3">
+            {% include "common/field.html" with field=form.town %}
+            {% include "common/field.html" with field=form.department %}
+            {% include "common/field.html" with field=form.country %}
+        </div>
+        <div class="row mb-3">
+            {% include "common/field.html" with field=form.locality %}
+        </div>
+        <div class="row mb-3">
+            {% include "common/field.html" with field=form.coordinate_x %}
+            {% include "common/field.html" with field=form.coordinate_y %}
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript">
+const reverseGeocode = (location) => {
+    const parseAddress = (addressObject, index) => {
+        let addressComponent = '';
+        try {
+            addressComponent = addressObject.address_components[index].long_name;
+        } catch (e) {
+            // TODO: Display a popup instead of an infoWindow
+            console.log("Can't get all the components of the formatted address");
+            console.error(e);
+        }
+
+        return addressComponent
+    }
+
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'location': location }, function (results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            console.log(results)
+            if (results[0]) {
+                const addressObject = results[0];
+
+                // Fill the form
+                document.querySelector('input[name=coordinate_x]').value = location.lat;
+                document.querySelector('input[name=coordinate_y]').value = location.lng;
+                document.querySelector('input[name=town]').value = parseAddress(addressObject, 2);
+                document.querySelector('input[name=department]').value = parseAddress(addressObject, 3);
+                document.querySelector('input[name=country]').value = parseAddress(addressObject, 4);
+            }
+        } else {
+            // TODO: Display a popup instead of an infoWindow
+            console.error('Geocoder failed due to: ' + status);
+        }
+    });
+}
+
+function initMap() {
+    let markers = [];
+
+    const setPosition = (latLng) => {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        const marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+        });
+
+        // Center the map on the marker
+        markers.push(marker);
+        map.panTo(latLng);
+        reverseGeocode(latLng);
+    }
+
+    let INIT_LAT = 49.174924;
+    let INIT_LNG = -0.339841;
+
+    {% if form.coordinate_x.value and form.coordinate_x.value %}
+    INIT_LAT = {{form.coordinate_x.value}};
+    INIT_LNG = {{form.coordinate_y.value}};
+    {% endif %}
+
+    const map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: INIT_LAT, lng: INIT_LNG },
+        zoom: 15
+    });
+
+    map.addListener('click', function(e) { setPosition(e.latLng); });
+}
+</script>
+
+<!-- Google map API -->
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ google_map_api_key }}"></script>
+{% endblock %}

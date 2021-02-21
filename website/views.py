@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import get_template
-from website.utils.views_snippets import get_or_none
+from website.utils.views_snippets import get_or_none, flush_session
 from website.models import Plover
 from django.conf import settings
-from django.http import HttpResponse
-from website.forms import CodeForm, MetalForm
+from django.http import HttpResponse, HttpResponseRedirect
+from website.forms import CodeForm, MetalForm, MapForm
 
 from weasyprint import HTML, CSS
+from os import getenv
 
 
 def index(request):
@@ -67,3 +68,34 @@ def get_report(request, metal_ring):
     response['Content-Disposition'] = f'attachment; filename="{metal_ring}.pdf"'
 
     return response
+
+
+def map(request):
+    flush_session(request, ('plovers', 'general'))
+
+    if request.method == 'POST':
+        map_form = MapForm(request.POST)
+
+        # check whether it's valid:
+        if map_form.is_valid():
+            request.session['general'] = {
+                'date': request.POST.get('date'),
+                'last_name': request.POST.get('last_name').upper(),
+                'first_name': request.POST.get('first_name').capitalize(),
+                'email': request.POST.get('email').lower(),
+                'town': request.POST.get('town').capitalize(),
+                'department': request.POST.get('department'),
+                'country': request.POST.get('country').capitalize(),
+                'locality': request.POST.get('locality').capitalize(),
+                'coordinate_x': request.POST.get('coordinate_x'),
+                'coordinate_y': request.POST.get('coordinate_y')
+            }
+
+            return redirect('observations')
+    else:
+        map_form = MapForm()
+
+    return render(request, 'website/map.html', {
+        'form': map_form,
+        'google_map_api_key': getenv("GOOGLE_MAP_API_KEY")
+    })
