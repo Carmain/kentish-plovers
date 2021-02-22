@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load template_filters %}
+
+{% block title %}{% trans "Set your observations" %}{% endblock %}
+{% block content %}
+<section class="container py-lg-3">
+    <h2>{% trans "Set your observations" %}</h2>
+
+    <p>{% trans "Date" %} : {{general.date}}</p>
+    <p>{% trans "Observer" %} : {{general.last_name}} {{general.first_name}}</p>
+    <p>{% trans "Location" %} : {{general.town}}, {{general.department}}</p>
+
+    <div class="row">
+        <div class="col-sm-6">
+        <h3>{% trans 'Record an observation' %}</h3>
+
+        <form method="post" action="{% url 'observations' %}" autocomplete="off">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="row mb-3">
+                {% include "common/field.html" with field=field %}
+            </div>
+            {% endfor %}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">{% trans 'Add my observation' %}</button>
+            </div>
+        </form>
+        </div>
+
+        <div class="col-sm-6">
+        <h3>{% trans 'All the plovers seized' %}</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{% trans 'Code' %}</th>
+                <th>{% trans 'Color' %}</th>
+                <th>{% trans 'Sex' %}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                {{plovers}}
+            {% for plover in plovers %}
+                <tr>
+                <td>{{plover.code}}</td>
+                <td>{{plover.color|color_to_string}}</td>
+                <td>{{plover.sex|sex_to_string}}</td>
+                <td>
+                    <a href="{% url 'remove_plover_from_session' plover.id %}">
+                        <img src="{% static 'img/trash-fill.svg' %}" alt="{% trans 'Delete observation' %}">
+                    </a>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{% url 'validate_plovers' %}" class="btn btn-secondary large-button" role="button" {% if not plovers %}disabled{% endif %}>
+            {% trans "Send my observations" %}
+        </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
