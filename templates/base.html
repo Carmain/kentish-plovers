@@ -28,13 +28,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    {% if request.path != '/' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/map">{% trans "Record an observation" %}</a>
+                        <a class="nav-link" href="{% url 'map' %}">{% trans "Record an observation" %}</a>
                     </li>
-                    {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/search/code">{% trans "Search a plover" %}</a>
+                        <a class="nav-link" href="{% url 'search' %}">{% trans "Search a plover" %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/">{% trans "Administration" %}</a>
