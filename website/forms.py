@@ -1,5 +1,5 @@
 from django import forms
-from website.models import COLOR_CHOICES
+from website.models import COLOR_CHOICES, SEX_CHOICES
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -80,3 +80,17 @@ class MapForm(forms.Form):
 
     coordinate_x = InputsTemplates.coordinatefield_template(_('X coordinate'))
     coordinate_y = InputsTemplates.coordinatefield_template(_('Y coordinate'))
+
+
+class PloverForm(forms.Form):
+    code = InputsTemplates.code_input()
+    color = InputsTemplates.choicefield_input(_('Color'), COLOR_CHOICES)
+    sex = InputsTemplates.choicefield_input(_('Sex'), SEX_CHOICES)
+    comment = forms.CharField(
+        label=_('Comment'),
+        required=False,
+        widget=forms.Textarea(attrs={
+            'class': 'form-control',
+            'rows': 3
+        })
+    )
