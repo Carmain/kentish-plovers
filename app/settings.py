@@ -38,6 +38,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
 
 INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
+    'old_website.apps.OldWebsiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +84,6 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -92,6 +92,12 @@ DATABASES = {
         'PASSWORD': os.getenv("DATABASE_PASSWORD"),
         'HOST': os.getenv("DATABASE_HOST"),
         'PORT': os.getenv("DATABASE_PORT"),
+    },
+    'old_website': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv("OLD_DATABASE_NAME"),
+        'USER': os.getenv("OLD_DATABASE_USER"),
+        'PASSWORD': os.getenv("OLD_DATABASE_PASSWORD"),
     }
 }
 
