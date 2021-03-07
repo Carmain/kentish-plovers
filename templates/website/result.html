@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load template_filters %}
 
-{% block title %}{% trans "Set your observations" %}{% endblock %}
+{% block title %}{% trans "Result" %}{% endblock %}
 {% block content %}
 <section class="container py-lg-3">
     <h2 class="mb-3">{% trans "Result" %}</h2>
@@ -19,7 +19,7 @@
     {% if rejected_observations and accepted_observations %}<hr>{% endif %}
 
     {% if accepted_observations %}
-    <h3>{% trans "Accepted observations" %}</h3>
+    <h3>{% trans "Observations accepted" %}</h3>
     <table class="table table-striped">
         <thead>
         <tr>

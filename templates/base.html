@@ -15,7 +15,7 @@
     <link href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="shortcut icon" type="image/png" href="{% static 'media/fav_icon.png' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/fav_icon.ico' %}" />
 </head>
 
 <body>
@@ -29,19 +29,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'map' %}">{% trans "Record an observation" %}</a>
+                        <a class="nav-link" href="{% url 'map' %}">{% trans "Record observations" %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'search' %}">{% trans "Search a plover" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/">{% trans "Administration" %}</a>
+                        <a class="nav-link" href="/admin/" target="_blank">{% trans "Administration" %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://crbpo.mnhn.fr/" target="_blank">{% trans "The C.R.B.P.O" %}</a>
                     </li>
                 </ul>
-                <form class="d-flex">
+                <form class="d-flex" action="{% url 'set_language' %}" method="post">
                     {% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}">
                     <select name="language" class="form-select form-select-sm me-2">

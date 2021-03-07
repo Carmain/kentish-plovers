@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% trans "Set your observations" %}{% endblock %}
+{% block title %}{% trans "Record your observations" %}{% endblock %}
 {% block content %}
 
 <section class="container py-lg-3">
@@ -54,7 +54,7 @@ const reverseGeocode = (location) => {
             addressComponent = addressObject.address_components[index].long_name;
         } catch (e) {
             // TODO: Display a popup instead of an infoWindow
-            console.log("Can't get all the components of the formatted address");
+            console.error("Can't get all the components of the formatted address");
             console.error(e);
         }
 
@@ -64,13 +64,12 @@ const reverseGeocode = (location) => {
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'location': location }, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
-            console.log(results)
             if (results[0]) {
                 const addressObject = results[0];
 
                 // Fill the form
-                document.querySelector('input[name=coordinate_x]').value = location.lat;
-                document.querySelector('input[name=coordinate_y]').value = location.lng;
+                document.querySelector('input[name=coordinate_x]').value = location.lat();
+                document.querySelector('input[name=coordinate_y]').value = location.lng();
                 document.querySelector('input[name=town]').value = parseAddress(addressObject, 2);
                 document.querySelector('input[name=department]').value = parseAddress(addressObject, 3);
                 document.querySelector('input[name=country]').value = parseAddress(addressObject, 4);

@@ -3,18 +3,18 @@
 {% load static %}
 {% load template_filters %}
 
-{% block title %}{% trans "Set your observations" %}{% endblock %}
+{% block title %}{% trans "Record your observations" %}{% endblock %}
 {% block content %}
 <section class="container py-lg-3">
-    <h2>{% trans "Set your observations" %}</h2>
+    <h2>{% trans "Record your observations" %}</h2>
 
-    <p>{% trans "Date" %} : {{general.date}}</p>
-    <p>{% trans "Observer" %} : {{general.last_name}} {{general.first_name}}</p>
-    <p>{% trans "Location" %} : {{general.town}}, {{general.department}}</p>
+    <p><b>{% trans "Date" %} :</b> {{general.date}}</p>
+    <p><b>{% trans "Observer" %} :</b> {{general.last_name}} {{general.first_name}}</p>
+    <p><b>{% trans "Location" %} :</b> {{general.town}}, {{general.department}}</p>
 
     <div class="row">
         <div class="col-sm-6">
-        <h3>{% trans 'Record an observation' %}</h3>
+        <h3>{% trans 'Record observations' %}</h3>
 
         <form method="post" action="{% url 'observations' %}" autocomplete="off">
             {% csrf_token %}
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-sm-6">
-        <h3>{% trans 'All the plovers seized' %}</h3>
+        <h3>{% trans 'All the plovers already seized' %}</h3>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -41,7 +41,6 @@
             </tr>
             </thead>
             <tbody>
-                {{plovers}}
             {% for plover in plovers %}
                 <tr>
                 <td>{{plover.code}}</td>
@@ -49,7 +48,7 @@
                 <td>{{plover.sex|sex_to_string}}</td>
                 <td>
                     <a href="{% url 'remove_plover_from_session' plover.id %}">
-                        <img src="{% static 'img/trash-fill.svg' %}" alt="{% trans 'Delete observation' %}">
+                        <img src="{% static 'img/trash-fill.svg' %}" alt="{% trans 'Delete the observation' %}">
                     </a>
                 </td>
                 </tr>
