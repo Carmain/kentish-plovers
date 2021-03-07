@@ -6,9 +6,7 @@
 {% block content %}
 
 <section class="container py-lg-3">
-    <h2>{% trans "Set a location and a date" %}</h2>
-
-    <div id="map" class="map-form"></div>
+    <h1 class="mt-5">{% trans "Set a location and a date" %}</h1>
 
     <form method="post" action="{% url 'map' %}" autocomplete="off">
         {% csrf_token %}
@@ -24,6 +22,8 @@
         </div>
 
         <hr />
+
+        <div id="map" class="map-form"></div>
 
         <div class="row mb-3">
             {% include "common/field.html" with field=form.town %}
