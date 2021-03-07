@@ -54,7 +54,7 @@ const reverseGeocode = (location) => {
             addressComponent = addressObject.address_components[index].long_name;
         } catch (e) {
             // TODO: Display a popup instead of an infoWindow
-            console.log("Can't get all the components of the formatted address");
+            console.error("Can't get all the components of the formatted address");
             console.error(e);
         }
 
