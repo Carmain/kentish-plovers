@@ -41,7 +41,7 @@
                         <a class="nav-link" href="https://crbpo.mnhn.fr/" target="_blank">{% trans "The C.R.B.P.O" %}</a>
                     </li>
                 </ul>
-                <form class="d-flex">
+                <form class="d-flex" action="{% url 'set_language' %}" method="post">
                     {% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}">
                     <select name="language" class="form-select form-select-sm me-2">
