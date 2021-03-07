@@ -61,7 +61,7 @@ def get_report(request, metal_ring):
             {'plover': plover}).encode(encoding="UTF-8"),
         base_url=request.build_absolute_uri()
     ).write_pdf(stylesheets=[
-        CSS(f'{static_path}node_modules/bootstrap/dist/css/bootstrap.min.css'),
+        CSS('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css'),
         CSS(f'{static_path}css/pdf.css')
     ])
 
