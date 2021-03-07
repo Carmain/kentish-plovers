@@ -82,7 +82,11 @@ class Plover(models.Model):
         on_delete=models.PROTECT,
         verbose_name=_('Location')
     )
-    banding_year = models.IntegerField(verbose_name=_('Banding year'))
+    banding_year = models.IntegerField(
+        blank=True,
+        null=True,
+        verbose_name=_('Banding year')
+    )
     metal_ring = models.CharField(
         max_length=20,
         unique=True,
