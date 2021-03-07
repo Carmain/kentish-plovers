@@ -17,31 +17,25 @@
    pipenv install --dev # For development
    ```
 
-2. Install the front dependencies
-
-   ```bash
-   yarn install
-   ```
-
-3. Add the `.env` file & fill all the informations needed (`ROLLBAR_ACCESS_TOKEN` is optionnal)
+2. Add the `.env` file & fill all the informations needed (`ROLLBAR_ACCESS_TOKEN` is optionnal)
 
    ```bash
    cp .env.example .env
    ```
 
-4. Compile all the translation dictionaries
+3. Compile all the translation dictionaries
 
    ```bash
    python manage.py compilemessages
    ```
 
-5. Migrate the database
+4. Migrate the database
 
    ```bash
    python manage.py migrate
    ```
 
-6. Load seeds if needed
+5. Load seeds if needed
 
    ```bash
    python manage.py loaddata seeders/*
