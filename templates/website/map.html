@@ -64,7 +64,6 @@ const reverseGeocode = (location) => {
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'location': location }, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
-            console.log(results)
             if (results[0]) {
                 const addressObject = results[0];
 
