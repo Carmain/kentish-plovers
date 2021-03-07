@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load static %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<table class="header">
+    <thead>
+        <th>
+            <td>
+                <img class="resume-logo" src="{% static 'img/square_gonm.png' %}" alt="{% trans 'GONm logo' %}">
+            </td>
+        <th>
+        </th>
+            <td align="center">
+                <h3 class="text-center">{% trans "Summary of all sightings for the banded Kentish plover" %}<b></b></h3>
+                <h4 class="text-center"><i>{% trans "Charadrius alexandrinus" %}</i></h4>
+            </td>
+        </th>
+    </thead>
+</table>
+
+{% include "common/bird_resume.html" with header_split=False %}
+</body>

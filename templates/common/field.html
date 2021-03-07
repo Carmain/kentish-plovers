@@ -1,0 +1,9 @@
+<div class="col">
+    <div class="form-floating">
+        {{ field }}
+        <label for="{{ field.name }}" class="control-label">{{ field.label }}</label>
+        {% for error in field.errors %}
+        <p class="text-danger">{{error|escape}}</p>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-07 18:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/settings.py:125
+msgid "French"
+msgstr "French"
+
+#: app/settings.py:126
+msgid "English"
+msgstr "English"
+
+#: templates/base.html:24
+msgid "Banding-tracking"
+msgstr "Banding-tracking"
+
+#: templates/base.html:32 templates/website/home.html:17
+#: templates/website/observations.html:17
+msgid "Record observations"
+msgstr "Record observations"
+
+#: templates/base.html:35 templates/website/search.html:9
+msgid "Search a plover"
+msgstr "Search a plover"
+
+#: templates/base.html:38 website/admin.py:38
+msgid "Administration"
+msgstr "Administration"
+
+#: templates/base.html:41
+msgid "The C.R.B.P.O"
+msgstr "The C.R.B.P.O"
+
+#: templates/base.html:54 templates/website/map.html:42
+msgid "Submit"
+msgstr "Submit"
+
+#: templates/common/bird_resume.html:35 templates/website/observations.html:11
+#: website/forms.py:66 website/models.py:143
+msgid "Date"
+msgstr "Date"
+
+#: templates/common/bird_resume.html:36 website/forms.py:76
+#: website/models.py:33
+msgid "Town"
+msgstr "Town"
+
+#: templates/common/bird_resume.html:37 website/forms.py:78
+#: website/models.py:32
+msgid "Country"
+msgstr "Country"
+
+#: templates/common/bird_resume.html:38 templates/website/observations.html:12
+#: website/models.py:47 website/models.py:131
+msgid "Observer"
+msgstr "Observer"
+
+#: templates/common/home_card.html:8
+msgid "Go"
+msgstr "Go"
+
+#: templates/common/resume/bander_informations.html:4 website/models.py:77
+msgid "Bander"
+msgstr "Bander"
+
+#: templates/common/resume/bander_informations.html:8
+msgid "Banding location"
+msgstr "Banding location"
+
+#: templates/common/resume/bander_informations.html:12 website/models.py:108
+msgid "Banding date"
+msgstr "Banding date"
+
+#: templates/common/resume/bird_informations.html:4 website/forms.py:61
+#: website/models.py:89
+msgid "Metal ring"
+msgstr "Metal ring"
+
+#: templates/common/resume/bird_informations.html:8
+#: templates/website/observations.html:37 templates/website/result.html:26
+#: website/forms.py:29 website/models.py:91
+msgid "Code"
+msgstr "Code"
+
+#: templates/common/resume/bird_informations.html:12
+#: templates/website/observations.html:38 templates/website/result.html:28
+#: website/forms.py:57 website/forms.py:87 website/models.py:96
+msgid "Color"
+msgstr "Color"
+
+#: templates/common/resume/bird_informations.html:16
+#: templates/website/observations.html:39 templates/website/result.html:29
+#: website/forms.py:88 website/models.py:102
+msgid "Sex"
+msgstr "Sex"
+
+#: templates/website/home.html:5
+msgid "Home"
+msgstr "Home"
+
+#: templates/website/home.html:10
+msgid "Study tool for ringed birds' populations"
+msgstr "Study tool for ringed birds' populations"
+
+#: templates/website/home.html:22
+msgid "GONm website"
+msgstr "GONm website"
+
+#: templates/website/home.html:23
+msgid "The GONm"
+msgstr "The GONm"
+
+#: templates/website/home.html:28
+msgid "Bretagne vivante"
+msgstr "Bretagne vivante"
+
+#: templates/website/map.html:5 templates/website/observations.html:6
+#: templates/website/observations.html:9
+#, fuzzy
+#| msgid "Record observations"
+msgid "Record your observations"
+msgstr "Record observations"
+
+#: templates/website/map.html:9
+msgid "Set a location and a date"
+msgstr "Set a location and a date"
+
+#: templates/website/observations.html:13 website/models.py:25
+#: website/models.py:83 website/models.py:141
+msgid "Location"
+msgstr "Location"
+
+#: templates/website/observations.html:27
+msgid "Add my observation"
+msgstr "Add my observation"
+
+#: templates/website/observations.html:33
+msgid "All the plovers already seized"
+msgstr "All the plovers already seized"
+
+#: templates/website/observations.html:52
+msgid "Delete the observation"
+msgstr "Delete the observation"
+
+#: templates/website/observations.html:61
+msgid "Send my observations"
+msgstr "Send my observations"
+
+#: templates/website/pdf_export.html:18 templates/website/search.html:46
+msgid "GONm logo"
+msgstr "GONm logo"
+
+#: templates/website/pdf_export.html:23 templates/website/search.html:50
+msgid "Summary of all sightings for the banded Kentish plover"
+msgstr "Summary of all sightings for the banded Kentish plover"
+
+#: templates/website/pdf_export.html:24 templates/website/search.html:51
+msgid "Charadrius alexandrinus"
+msgstr "Charadrius alexandrinus"
+
+#: templates/website/result.html:5 templates/website/result.html:8
+msgid "Result"
+msgstr "Result"
+
+#: templates/website/result.html:11
+msgid "Rejected observations"
+msgstr "Rejected observations"
+
+#: templates/website/result.html:22
+msgid "Observations accepted"
+msgstr "Observations accepted"
+
+#: templates/website/result.html:27
+msgid "Number"
+msgstr "Number"
+
+#: templates/website/result.html:43 templates/website/search.html:40
+msgid "Download into PDF"
+msgstr "Download into PDF"
+
+#: templates/website/result.html:53
+msgid "Go back to the form"
+msgstr "Go back to the form"
+
+#: templates/website/search.html:5 templates/website/search.html:30
+msgid "Search"
+msgstr "Search"
+
+#: templates/website/search.html:13
+msgid "Search by metal ring code"
+msgstr "Search by metal ring code"
+
+#: templates/website/search.html:18
+msgid "Search by color code"
+msgstr "Search by color code"
+
+#: templates/website/search.html:60
+msgid "Can't find any plover related to the given informations"
+msgstr "Can't find any plover related to the given informations"
+
+#: website/admin.py:39 website/models.py:71
+msgid "Kentish plovers"
+msgstr "Kentish plovers"
+
+#: website/forms.py:73 website/models.py:54
+msgid "Last name"
+msgstr "Last name"
+
+#: website/forms.py:74 website/models.py:55
+msgid "First name"
+msgstr "First name"
+
+#: website/forms.py:75 website/models.py:58
+msgid "Email"
+msgstr "Email"
+
+#: website/forms.py:77 website/models.py:34
+msgid "Department"
+msgstr "Department"
+
+#: website/forms.py:79 website/models.py:38
+msgid "Locality"
+msgstr "Locality"
+
+#: website/forms.py:81 website/models.py:150
+msgid "X coordinate"
+msgstr "X coordinate"
+
+#: website/forms.py:82 website/models.py:151
+msgid "Y coordinate"
+msgstr "Y coordinate"
+
+#: website/forms.py:90 website/models.py:152
+msgid "Comment"
+msgstr "Comment"
+
+#: website/models.py:5
+msgid "Male"
+msgstr "Male"
+
+#: website/models.py:6
+msgid "Female"
+msgstr "Female"
+
+#: website/models.py:7
+msgid "Undetermined"
+msgstr "Undetermined"
+
+#: website/models.py:11
+msgid "Red"
+msgstr "Red"
+
+#: website/models.py:12
+msgid "Pink"
+msgstr "Pink"
+
+#: website/models.py:13
+msgid "White"
+msgstr "White"
+
+#: website/models.py:14
+msgid "Yellow"
+msgstr "Yellow"
+
+#: website/models.py:15
+msgid "Green"
+msgstr "Green"
+
+#: website/models.py:26
+msgid "Locations"
+msgstr "Locations"
+
+#: website/models.py:48
+msgid "Observers"
+msgstr "Observers"
+
+#: website/models.py:61
+msgid "Is bander"
+msgstr "Is bander"
+
+#: website/models.py:70
+msgid "Kentish plover"
+msgstr "Kentish plover"
+
+#: website/models.py:85
+msgid "Banding year"
+msgstr "Banding year"
+
+#: website/models.py:104
+msgid "Age"
+msgstr "Age"
+
+#: website/models.py:113
+msgid "Banding time"
+msgstr "Banding time"
+
+#: website/models.py:122
+msgid "Observation"
+msgstr "Observation"
+
+#: website/models.py:123
+msgid "Observations"
+msgstr "Observations"
+
+#: website/models.py:136
+msgid "Plover"
+msgstr "Plover"
+
+#: website/models.py:148
+msgid "Supposed Sex"
+msgstr "Supposed Sex"

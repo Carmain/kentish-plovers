@@ -1,0 +1,27 @@
+@page {
+    size: a4 portrait;
+    margin: 27mm 10mm 27mm 10mm;
+    counter-increment: page;
+    -webkit-print-color-adjust: exact;
+    
+    @bottom-center {
+        font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
+        content: "GONm - Page " counter(page);
+        white-space: pre;
+        color: grey;
+    }
+}
+
+body {
+    /* XXX: The fonts used by Boostrap doesn't seems to work well with weasyprint */
+    font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.resume-logo {
+    width: 130px;
+}

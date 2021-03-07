@@ -1,0 +1,16 @@
+.resume-logo {
+    max-width: 200px;
+    width: 100%;
+    max-height: 200px;
+    height: 100%;
+}
+
+#map {
+    height: 220px;
+    margin-bottom: 30px;
+}
+
+hr {
+    margin: 30px;
+    padding: 0;
+}

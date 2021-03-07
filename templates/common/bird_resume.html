@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+
+<div class="row">
+    {% if header_split %}
+    <div class="col">
+        <table class="table">
+            <tbody>
+                {% include "common/resume/bander_informations.html" %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table class="table">
+            <tbody>
+                {% include "common/resume/bird_informations.html" %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="col-md-12 col-sm-12">
+        <table class="table">
+            <tbody>
+                {% include "common/resume/bander_informations.html" %}
+                {% include "common/resume/bird_informations.html" %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>{% trans 'Date' %}</th>
+            <th>{% trans 'Town' %}</th>
+            <th>{% trans 'Country' %}</th>
+            <th>{% trans 'Observer' %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for observation in plover.observations.all %}
+        <tr>
+            <td>{{observation.date}}</td>
+            <td>{{observation.location.town}}</td>
+            <td>{{observation.location.country}}</td>
+            <td>{{observation.observer.last_name|upper}} {{observation.observer.first_name}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
