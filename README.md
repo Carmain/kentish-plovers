@@ -4,7 +4,7 @@
 ![Python version](https://img.shields.io/badge/Django_version-3.8-0C4B33.svg?logo=Django&logoColor=white)
 ![Bootstrap version](https://img.shields.io/badge/Bootstrap_version-5.0.0_beta2-563d7c.svg?logo=Bootstrap&logoColor=white)
 
-![Project version](https://img.shields.io/badge/Project_version-1.0.0-ffd43b.svg)
+![Project version](https://img.shields.io/badge/Project_version-1.0.1-ffd43b.svg)
 
 `Kentish-plovers` is the second version of a web app used by citizens and birdwatchers to save observations and get the life track of banded kentish plovers during a program on this specie in Normandy (France).
 
@@ -17,31 +17,25 @@
    pipenv install --dev # For development
    ```
 
-2. Install the front dependencies
-
-   ```bash
-   yarn install
-   ```
-
-3. Add the `.env` file & fill all the informations needed (`ROLLBAR_ACCESS_TOKEN` is optionnal)
+2. Add the `.env` file & fill all the informations needed (`ROLLBAR_ACCESS_TOKEN` is optionnal)
 
    ```bash
    cp .env.example .env
    ```
 
-4. Compile all the translation dictionaries
+3. Compile all the translation dictionaries
 
    ```bash
    python manage.py compilemessages
    ```
 
-5. Migrate the database
+4. Migrate the database
 
    ```bash
    python manage.py migrate
    ```
 
-6. Load seeds if needed
+5. Load seeds if needed
 
    ```bash
    python manage.py loaddata seeders/*
