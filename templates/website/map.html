@@ -68,8 +68,8 @@ const reverseGeocode = (location) => {
                 const addressObject = results[0];
 
                 // Fill the form
-                document.querySelector('input[name=coordinate_x]').value = location.lat;
-                document.querySelector('input[name=coordinate_y]').value = location.lng;
+                document.querySelector('input[name=coordinate_x]').value = location.lat();
+                document.querySelector('input[name=coordinate_y]').value = location.lng();
                 document.querySelector('input[name=town]').value = parseAddress(addressObject, 2);
                 document.querySelector('input[name=department]').value = parseAddress(addressObject, 3);
                 document.querySelector('input[name=country]').value = parseAddress(addressObject, 4);
