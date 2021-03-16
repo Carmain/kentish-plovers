@@ -23,19 +23,13 @@
    cp .env.example .env
    ```
 
-3. Compile all the translation dictionaries
-
-   ```bash
-   python manage.py compilemessages
-   ```
-
-4. Migrate the database
+3. Migrate the database
 
    ```bash
    python manage.py migrate
    ```
 
-5. Load seeds if needed
+4. Load seeds if needed
 
    ```bash
    python manage.py loaddata seeders/*
