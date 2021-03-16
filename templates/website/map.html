@@ -6,10 +6,12 @@
 {% block content %}
 
 <section class="container py-lg-3">
-    <h1 class="mt-5">{% trans "Set a location and a date" %}</h1>
-
-    <form method="post" action="{% url 'map' %}" autocomplete="off">
+    <form method="post" action="{% url 'map' %}" class="mt-5">
         {% csrf_token %}
+        <h1>1. {% trans "General informations" %}</h1>
+        <p class="fst-italic">
+            {% trans "Please fill the date of your observation & your personal information to contact you if needed" %}
+        </p>
         <div class="row mb-3">
             {% include "common/field.html" with field=form.date %}
         </div>
@@ -23,8 +25,11 @@
 
         <hr />
 
+        <h1>2. {% trans "Localize your observation" %}</h1>
+        <p class="fst-italic">
+            {% trans "You can click on the map to localize your observation or fill the form by hand" %}
+        </p>
         <div id="map" class="map-form"></div>
-
         <div class="row mb-3">
             {% include "common/field.html" with field=form.town %}
             {% include "common/field.html" with field=form.department %}
