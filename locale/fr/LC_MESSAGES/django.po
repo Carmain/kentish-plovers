@@ -3,56 +3,56 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-07 18:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2021-03-16 22:37+0100\n"
+"PO-Revision-Date: 2021-03-16 22:46+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.2\n"
 
-#: app/settings.py:125
+#: app/settings.py:126
 msgid "French"
 msgstr "Français"
 
-#: app/settings.py:126
+#: app/settings.py:127
 msgid "English"
 msgstr "Anglais"
 
-#: templates/base.html:24
+#: templates/base.html:25
 msgid "Banding-tracking"
 msgstr "Banding-tracking"
 
-#: templates/base.html:32 templates/website/home.html:17
-#: templates/website/observations.html:17
+#: templates/base.html:33 templates/website/home.html:17
+#: templates/website/observations.html:27
 msgid "Record observations"
 msgstr "Enregistrer des observations"
 
-#: templates/base.html:35 templates/website/search.html:9
+#: templates/base.html:36 templates/website/search.html:9
 msgid "Search a plover"
 msgstr "Rechercher un gravelot"
 
-#: templates/base.html:38 website/admin.py:38
+#: templates/base.html:39 website/admin.py:38
 msgid "Administration"
 msgstr "Administration"
 
-#: templates/base.html:41
+#: templates/base.html:42
 msgid "The C.R.B.P.O"
 msgstr "Le C.R.B.P.O"
 
-#: templates/base.html:54 templates/website/map.html:42
+#: templates/base.html:55 templates/website/map.html:47
 msgid "Submit"
 msgstr "Envoyer"
 
-#: templates/common/bird_resume.html:35 templates/website/observations.html:11
-#: website/forms.py:66 website/models.py:143
+#: templates/common/bird_resume.html:35 templates/website/observations.html:12
+#: website/forms.py:66 website/models.py:147
 msgid "Date"
 msgstr "Date"
 
@@ -66,8 +66,8 @@ msgstr "Ville"
 msgid "Country"
 msgstr "Pays"
 
-#: templates/common/bird_resume.html:38 templates/website/observations.html:12
-#: website/models.py:47 website/models.py:131
+#: templates/common/bird_resume.html:38 templates/website/observations.html:13
+#: website/models.py:47 website/models.py:135
 msgid "Observer"
 msgstr "Observateur"
 
@@ -83,30 +83,30 @@ msgstr "Bagueur"
 msgid "Banding location"
 msgstr "Lieu du baguage"
 
-#: templates/common/resume/bander_informations.html:12 website/models.py:108
+#: templates/common/resume/bander_informations.html:12 website/models.py:112
 msgid "Banding date"
 msgstr "Date du baguage"
 
 #: templates/common/resume/bird_informations.html:4 website/forms.py:61
-#: website/models.py:89
+#: website/models.py:93
 msgid "Metal ring"
 msgstr "Bague métal"
 
 #: templates/common/resume/bird_informations.html:8
-#: templates/website/observations.html:37 templates/website/result.html:26
-#: website/forms.py:29 website/models.py:91
+#: templates/website/observations.html:46 templates/website/result.html:26
+#: website/forms.py:29 website/models.py:95
 msgid "Code"
 msgstr "Code"
 
 #: templates/common/resume/bird_informations.html:12
-#: templates/website/observations.html:38 templates/website/result.html:28
-#: website/forms.py:57 website/forms.py:87 website/models.py:96
+#: templates/website/observations.html:47 templates/website/result.html:28
+#: website/forms.py:57 website/forms.py:87 website/models.py:100
 msgid "Color"
 msgstr "Couleur"
 
 #: templates/common/resume/bird_informations.html:16
-#: templates/website/observations.html:39 templates/website/result.html:29
-#: website/forms.py:88 website/models.py:102
+#: templates/website/observations.html:48 templates/website/result.html:29
+#: website/forms.py:88 website/models.py:106
 msgid "Sex"
 msgstr "Sexe"
 
@@ -135,28 +135,72 @@ msgstr "Bretagne vivante"
 msgid "Record your observations"
 msgstr "Enregistrer vos observations"
 
-#: templates/website/map.html:9
-msgid "Set a location and a date"
-msgstr "Définissez un lieu et une date"
+#: templates/website/map.html:11
+msgid "General informations"
+msgstr "Informations générales"
 
-#: templates/website/observations.html:13 website/models.py:25
-#: website/models.py:83 website/models.py:141
+#: templates/website/map.html:13
+msgid ""
+"Please fill the date of your observation & your personal information to "
+"contact you if needed"
+msgstr ""
+"Veuillez renseigner la date de votre observation et vos informations "
+"personnelles pour vous contacter si besoin"
+
+#: templates/website/map.html:28
+msgid "Localize your observation"
+msgstr "Localisez votre observation"
+
+#: templates/website/map.html:30
+msgid ""
+"You can click on the map to localize your observation or fill the form by "
+"hand"
+msgstr ""
+"Vous pouvez cliquer sur la carte pour localiser votre observation ou remplir "
+"le formulaire à la main"
+
+#: templates/website/observations.html:14 website/models.py:25
+#: website/models.py:83 website/models.py:145
 msgid "Location"
 msgstr "Lieu"
 
-#: templates/website/observations.html:27
+#: templates/website/observations.html:18
+msgid ""
+"Fill all the combinations reported on the place & day you gave in the "
+"previous page."
+msgstr ""
+"Remplissez toutes les combinaisons observées sur le lieu et le jour que vous "
+"avez indiqué sur la page précédente."
+
+#: templates/website/observations.html:19
+msgid ""
+"If you finised to record all the observations for that place & time, you can "
+"click on \"Send my observations\" to get the history of the birds."
+msgstr ""
+"Une fois terminé, vous pouvez cliquer sur «Envoyer mes observations» pour "
+"obtenir l’historique."
+
+#: templates/website/observations.html:22
+msgid ""
+"If one of the combinaison isn't recognised by the database, you will be "
+"notified."
+msgstr ""
+"Si l’une des combinaisons n’est pas reconnue par la base de données, vous en "
+"serez avisé."
+
+#: templates/website/observations.html:36
 msgid "Add my observation"
 msgstr "Ajouter mon observation"
 
-#: templates/website/observations.html:33
+#: templates/website/observations.html:42
 msgid "All the plovers already seized"
 msgstr "Tous les gravelots déjà saisis"
 
-#: templates/website/observations.html:52
+#: templates/website/observations.html:60
 msgid "Delete the observation"
 msgstr "Supprimer l'observation"
 
-#: templates/website/observations.html:61
+#: templates/website/observations.html:70
 msgid "Send my observations"
 msgstr "Envoyer mes observations"
 
@@ -166,7 +210,8 @@ msgstr "Logo du GONm"
 
 #: templates/website/pdf_export.html:23 templates/website/search.html:50
 msgid "Summary of all sightings for the banded Kentish plover"
-msgstr "Résumé de toutes les observations pour ce gravelot à collier interrompu"
+msgstr ""
+"Résumé de toutes les observations pour ce gravelot à collier interrompu"
 
 #: templates/website/pdf_export.html:24 templates/website/search.html:51
 msgid "Charadrius alexandrinus"
@@ -236,15 +281,15 @@ msgstr "Département"
 msgid "Locality"
 msgstr "Lieu-dit"
 
-#: website/forms.py:81 website/models.py:150
+#: website/forms.py:81 website/models.py:154
 msgid "X coordinate"
 msgstr "Coordonnée X"
 
-#: website/forms.py:82 website/models.py:151
+#: website/forms.py:82 website/models.py:155
 msgid "Y coordinate"
 msgstr "Coordonnée Y"
 
-#: website/forms.py:90 website/models.py:152
+#: website/forms.py:90 website/models.py:156
 msgid "Comment"
 msgstr "Commentaire"
 
@@ -296,30 +341,33 @@ msgstr "Est bagueur"
 msgid "Kentish plover"
 msgstr "Gravelot à collier interrompu"
 
-#: website/models.py:85
+#: website/models.py:88
 msgid "Banding year"
 msgstr "Date de baguage"
 
-#: website/models.py:104
+#: website/models.py:108
 msgid "Age"
 msgstr "Âge"
 
-#: website/models.py:113
+#: website/models.py:117
 msgid "Banding time"
 msgstr "heure de baguage"
 
-#: website/models.py:122
+#: website/models.py:126
 msgid "Observation"
 msgstr "Observation"
 
-#: website/models.py:123
+#: website/models.py:127
 msgid "Observations"
 msgstr "Observations"
 
-#: website/models.py:136
+#: website/models.py:140
 msgid "Plover"
 msgstr "Gravelot"
 
-#: website/models.py:148
+#: website/models.py:152
 msgid "Supposed Sex"
 msgstr "Sexe supposé"
+
+#~ msgid "Set a location and a date"
+#~ msgstr "Définissez un lieu et une date"

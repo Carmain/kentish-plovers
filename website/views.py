@@ -28,7 +28,7 @@ def search(request, method=None):
         form = CodeForm
     else:
         plover = get_or_none(
-            Plover, metal_ring=request.POST.get('metal_ring'))
+            Plover, metal_ring=request.POST.get('metal_ring').strip())
         form = MetalForm
 
     data = {
@@ -81,13 +81,13 @@ def map(request):
         if map_form.is_valid():
             request.session['general'] = {
                 'date': request.POST.get('date'),
-                'last_name': request.POST.get('last_name').upper(),
-                'first_name': request.POST.get('first_name').capitalize(),
-                'email': request.POST.get('email').lower(),
-                'town': request.POST.get('town').capitalize(),
+                'last_name': request.POST.get('last_name').strip().upper(),
+                'first_name': request.POST.get('first_name').strip().capitalize(),
+                'email': request.POST.get('email').strip().lower(),
+                'town': request.POST.get('town').strip().capitalize(),
                 'department': request.POST.get('department'),
-                'country': request.POST.get('country').capitalize(),
-                'locality': request.POST.get('locality').capitalize(),
+                'country': request.POST.get('country').strip().capitalize(),
+                'locality': request.POST.get('locality').strip().capitalize(),
                 'coordinate_x': request.POST.get('coordinate_x'),
                 'coordinate_y': request.POST.get('coordinate_y')
             }
@@ -136,7 +136,7 @@ def observations(request):
                     'code': form_data['code'],
                     'color': form_data['color'],
                     'sex': form_data['sex'],
-                    'comment': form_data['comment']
+                    'comment': form_data['comment'].strip(),
                 }
 
                 add_plover_in_session(request, plover)

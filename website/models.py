@@ -97,12 +97,14 @@ class Plover(models.Model):
         choices=COLOR_CHOICES,
         max_length=1,
         default=0,
+        null=True,
         verbose_name=_('Color')
     )
     sex = models.CharField(
         choices=SEX_CHOICES,
         max_length=20,
         default=2,
+        null=True,
         verbose_name=_('Sex')
     )
     age = models.CharField(max_length=5, verbose_name=_('Age'))
@@ -135,12 +137,14 @@ class Observation(models.Model):
         verbose_name=_('Observer')
     )
     plover = models.ForeignKey(
-        Plover, related_name='observations',
+        Plover,
+        related_name='observations',
         on_delete=models.CASCADE,
         verbose_name=_('Plover')
     )
     location = models.ForeignKey(
-        Location, related_name='observations',
+        Location,
+        related_name='observations',
         on_delete=models.CASCADE,
         verbose_name=_('Location')
     )
