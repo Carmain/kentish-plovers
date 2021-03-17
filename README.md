@@ -4,7 +4,7 @@
 ![Python version](https://img.shields.io/badge/Django_version-3.8-0C4B33.svg?logo=Django&logoColor=white)
 ![Bootstrap version](https://img.shields.io/badge/Bootstrap_version-5.0.0_beta2-563d7c.svg?logo=Bootstrap&logoColor=white)
 
-![Project version](https://img.shields.io/badge/Project_version-1.1.1-ffd43b.svg)
+![Project version](https://img.shields.io/badge/Project_version-1.2.0-ffd43b.svg)
 
 `Kentish-plovers` is the second version of a web app used by citizens and birdwatchers to save observations and get the life track of banded kentish plovers during a program on this specie in Normandy (France).
 
