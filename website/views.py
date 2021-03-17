@@ -83,7 +83,6 @@ def map(request):
                 'date': request.POST.get('date'),
                 'last_name': request.POST.get('last_name').strip().upper(),
                 'first_name': request.POST.get('first_name').strip().capitalize(),
-                'email': request.POST.get('email').strip().lower(),
                 'town': request.POST.get('town').strip().capitalize(),
                 'department': request.POST.get('department'),
                 'country': request.POST.get('country').strip().capitalize(),
