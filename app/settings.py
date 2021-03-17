@@ -93,13 +93,15 @@ DATABASES = {
         'HOST': os.getenv("DATABASE_HOST"),
         'PORT': os.getenv("DATABASE_PORT"),
     },
-    'old_website': {
+}
+
+if os.getenv("OLD_DATABASE_NAME"):
+    DATABASES['old_website'] = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.getenv("OLD_DATABASE_NAME"),
         'USER': os.getenv("OLD_DATABASE_USER"),
         'PASSWORD': os.getenv("OLD_DATABASE_PASSWORD"),
     }
-}
 
 
 # Password validation
