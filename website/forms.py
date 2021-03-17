@@ -32,15 +32,6 @@ class InputsTemplates():
         )
 
     @staticmethod
-    def emailfield_template(label, max_length, required=True):
-        return forms.EmailField(
-            label=label,
-            required=required,
-            max_length=max_length,
-            widget=forms.EmailInput(attrs={'class': 'form-control'})
-        )
-
-    @staticmethod
     def coordinatefield_template(label):
         return forms.FloatField(
             label=label,
@@ -72,7 +63,6 @@ class MapForm(forms.Form):
 
     last_name = InputsTemplates.charfield_template(_('Last name'), 255)
     first_name = InputsTemplates.charfield_template(_('First name'), 255)
-    email = InputsTemplates.emailfield_template(_('Email'), 255,)
     town = InputsTemplates.charfield_template(_('Town'), 255)
     department = InputsTemplates.charfield_template(_('Department'), 255)
     country = InputsTemplates.charfield_template(_('Country'), 255)
