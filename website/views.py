@@ -22,13 +22,15 @@ def search(request, method=None):
     plover = None
     form = None
     if method == 'code':
-        plover = get_or_none(
-            Plover, code=request.POST.get('code'),
-            color=request.POST.get('color'))
+        if request.method == 'POST':
+            plover = get_or_none(
+                Plover, code=request.POST.get('code'),
+                color=request.POST.get('color'))
         form = CodeForm
     else:
-        plover = get_or_none(
-            Plover, metal_ring=request.POST.get('metal_ring').strip())
+        if request.method == 'POST':
+            plover = get_or_none(
+                Plover, metal_ring=request.POST.get('metal_ring').strip())
         form = MetalForm
 
     data = {
@@ -162,14 +164,14 @@ def validate_plovers(request):
     accepted_observations = []
     rejected_observations = []
 
-    location, location_exist = Location.objects.get_or_create(
+    location, location_created = Location.objects.get_or_create(
         country=general.get('country'),
         town=general.get('town'),
         department=general.get('department'),
         locality=general.get('locality')
     )
 
-    observer, observer_exist = Observer.objects.get_or_create(
+    observer, observer_created = Observer.objects.get_or_create(
         last_name=general.get('last_name'),
         first_name=general.get('first_name'),
         email=general.get('email')

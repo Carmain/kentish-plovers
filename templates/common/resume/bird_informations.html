@@ -1,10 +1,6 @@
 {% load i18n %}
 
 <tr>
-    <td><b>{% trans 'Metal ring' %}</b></td>
-    <td>{{ plover.metal_ring }}</td>
-</tr>
-<tr>
     <td><b>{% trans 'Code' %}</b></td>
     <td>{{ plover.code|stringformat:'s' }}</td>
 </tr>
@@ -14,5 +10,5 @@
 </tr>
 <tr>
     <td><b>{% trans 'Sex' %}</b></td>
-    <td>{{ plover.sex }}</td>
+    <td>{{ plover.get_sex_display }}</td>
 </tr>
