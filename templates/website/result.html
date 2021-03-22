@@ -23,7 +23,6 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>{% trans 'Code' %}</th>
             <th>{% trans 'Number' %}</th>
             <th>{% trans 'Color' %}</th>
             <th>{% trans 'Sex' %}</th>
@@ -33,7 +32,6 @@
         <tbody>
         {% for plover in accepted_observations %}
             <tr>
-            <td>{{plover.metal_ring}}</td>
             <td>{{plover.code}}</td>
             <td>{{plover.get_color_display}}</td>
             <td>{{plover.get_sex_display}}</td>
