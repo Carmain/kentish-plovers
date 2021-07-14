@@ -19,6 +19,7 @@ psycopg2-binary = "*"
 python-dotenv = "~=0.15.0"
 weasyprint = "~=52.2"
 gunicorn = "*"
+xlsxwriter = "~=1.4.4"
 
 [requires]
 python_version = "3.8"
